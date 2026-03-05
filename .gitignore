@@ -1,1 +1,6 @@
 /Downloads/
+
+.ipynb_checkpoints/
+.*.swp
+*.json
+*.csv
