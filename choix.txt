@@ -1,0 +1,14 @@
+On met en optionnel dev et publisher car trop de modalitées.
+
+on merge les Full audio languages et Supported languages et on fait le compte
+
+Pour le filtrage des individus on supprimes ceux qui ont 0 languages et vides pour Categories ET Genres ET Tags
+
+Windows Mac Linux = boolean
+
+Log sur Positive Negative et regarder les outliers (optionnel)
+
+Score metacritic on le garde mais il n'y a que 20% des jeux
+
+log(x+1) sur les playtime forever
+
