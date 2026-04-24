@@ -12,3 +12,5 @@ Score metacritic on le garde mais il n'y a que 20% des jeux
 
 log(x+1) sur les playtime forever
 
+log(x+1) sur le Peak CCU et sur DLC count
+
