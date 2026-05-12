@@ -4,14 +4,14 @@ Sur cette page Github, vous trouverez une analyse approfondie sur un jeu de donn
 
 # Jeu de données
 Notre jeu de données, récupéré sur kaggle a été fourni par Steam, la plateforme de référence pour acheter et jouer à des jeux vidéo sur PC.
-Initialement, le jeu de données est composé plus de 120 000 jeux qui sont décrit par 39 variables regroupant des informations variées comme le nom des jeux, leur date de sortie, leur prix, les avis des utilisateurs (positifs/négatifs) et le temps de jeu moyen etc...
+Initialement, le jeu de données est composé plus de 120 000 jeux qui sont décrit par 40 variables regroupant des informations variées comme le nom des jeux, leur date de sortie, leur prix, les avis des utilisateurs (positifs/négatifs) et le temps de jeu moyen etc...
 
 # Les différentes études réalisées
 Vous trouverez dans les notebooks plusieurs analyses qui ont permis de répondre à plusieurs problématiques:
 1) Quels sont les variables intrinsèques à un jeu qui caractérisent le succès sur Steam? Et parmi les jeux à succès, peut-on etablir des classes de succès?
-2)  Parmi les différents genre de jeux existe-il genre qui caractérise la réussite?
-3)   Est-ce qu'on peut regrouper les jeux dans des classes homogènes?
-4)   Comment évolue le marché des jeux sur Steam?
+2) Existe-il des caractéristiques communes aux jeux d'un même genre?
+3) Est-ce qu'on peut regrouper les jeux dans des classes homogènes?
+4) Comment évolue le marché des jeux sur Steam?
 
 # Organisation des notebooks
 Dans cette partie, nous allons détailler ce que chaque notebook contient. 
