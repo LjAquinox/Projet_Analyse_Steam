@@ -12,6 +12,7 @@ Vous trouverez dans les notebooks plusieurs analyses qui ont permis de répondre
 2) Existe-il des caractéristiques communes aux jeux d'un même genre?
 3) Est-ce qu'on peut regrouper les jeux dans des classes homogènes?
 4) Comment évolue le marché des jeux sur Steam?
+5) 
 
 # Organisation des notebooks
 Dans cette partie, nous allons détailler ce que chaque notebook contient. 
