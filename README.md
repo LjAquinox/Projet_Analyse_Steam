@@ -11,7 +11,7 @@ Initialement, le jeu de données est composé plus de 120 000 jeux qui sont déc
 
 Vous trouverez dans les notebooks plusieurs analyses qui ont permis de répondre à plusieurs problématiques:
 1) Est-ce qu'on peut regrouper les jeux dans des classes homogènes?
-2) Quels sont les variables intrinsèques à un jeu qui caractérisent le succès sur Steam? Et parmi les jeux à succès, peut-on établir des classes de succès?
+2) Quels sont les variables intrinsèques à un jeu qui caractérisent le succès sur Steam? Et parmi les jeux à succès, est-il possible d'établir différentes typologies de réussite ?
 3) Existe-il des caractéristiques communes aux jeux d'un même genre?
 4) Quel est le profil d'un jeu évalué par la presse spécialisée (le score Metacritic) ?
 
