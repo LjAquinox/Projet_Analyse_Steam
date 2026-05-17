@@ -29,7 +29,7 @@ def partition_analysis(data, cluster_partition):
         for var in variables: 
             
             if var in ["Year of Release","Required age","Estimated owners"]:
-                values = df_temp[var].value_counts().head(3)
+                values = df_temp[var].value_counts().head(3)                    ### for these values we take the mode value, .value_counts() returns a sroted pandas series
 
                 for rank, (value, count) in enumerate(values.items(), start = 1):
                     
@@ -42,7 +42,7 @@ def partition_analysis(data, cluster_partition):
                 })
             
             else: 
-                value = df_temp[var].mean()
+                value = df_temp[var].mean()                         ## for the other quant variables we take the mean value
 
                 results.append({
                         "cluster": cluster,
@@ -53,9 +53,9 @@ def partition_analysis(data, cluster_partition):
                 })
 
 
-        for (i,j) in bool_variables: 
+        for (i,j) in bool_variables:                ### here we look at OS, genres/tags and categories
 
-            cluster_freq = df_temp.iloc[:, i:j].mean()
+            cluster_freq = df_temp.iloc[:, i:j].mean()          ### normal top 3 columns_sums did yield just the most generic genres/OS, so we look for the enrichment score
             cluster_freq = cluster_freq[cluster_freq > 0.05]   ## to exclude extremely rare games
 
             if i == 9:
@@ -147,7 +147,7 @@ def collect_cluster_results(df):
 
     results = []
 
-    for cluster in np.unique(df["cluster"]):
+    for cluster in np.unique(df["cluster"]):   ## we iterate over all cluster and create a dictionary for each cluster 
 
         df_temp = df[df["cluster"] == cluster]
 

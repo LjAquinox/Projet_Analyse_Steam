@@ -1,6 +1,6 @@
 #
-# This function first creates the labels that will be written on the clusters from the results obtained in partition_analysis
-# the parameter "results" it gets is a list of dictionarys with one dictionary per cluster, but in order to compare the clusters 
+# This function first creates the labels that will be written on the clusters from the results obtained in partition_analysis.
+# The parameter "results" it gets is a list of dictionarys with one dictionary per cluster, but in order to compare the clusters 
 # by looking at each variable, we rather want the variables to be on the highest level
 #
 
@@ -28,7 +28,7 @@ def make_labels(results):
     return var_labels
 
 # 
-# and plots the then on a given umap
+# The function below plots the labels then on a given umap
 #
 # the parameter on_cluster which is boolean is a distinction for the plot of the Genres, Categories and top_games because 
 # it is too much text that would not fit for each cluster in the plot 
@@ -37,9 +37,9 @@ def make_labels(results):
 
 def plot_one_Variable_on_umap(variable_name, labels,umap,dataset_name, cluster_partition, on_cluster):
 
-    K = len(np.unique(cluster_partition))
+    K = len(np.unique(cluster_partition))           ## number of clusters
 
-    fig, ax = plt.subplots(figsize=(16,16))
+    fig, ax = plt.subplots(figsize=(14,13))
 
     cmap = plt.get_cmap('tab20',K)
 
@@ -63,35 +63,27 @@ def plot_one_Variable_on_umap(variable_name, labels,umap,dataset_name, cluster_p
 
             ## calculate the position where the text of each luster will be  in the plot 
 
-            x = np.median(umap[mask,0]) *1.3
-            y = np.median(umap[mask,1]) *1.3
+            x = np.median(umap[mask,0]) *1.15
+            y = np.median(umap[mask,1]) *1.15
 
-            ax.text(x,y, str(label), fontsize=12, ha="center", va="center", zorder =100, clip_on=False,
+            ax.text(x,y, str(label), fontsize=16, ha="center", va="center", zorder =100, clip_on=False,
                     bbox=dict(boxstyle="round, pad=0.3", facecolor="white", edgecolor=cluster_color, linewidth= 3, alpha = 1))
             
     if not on_cluster: 
 
         ## for the not on cluster we just create a legend on the side 
-
-        ax.legend(
-            bbox_to_anchor=(0.02, 0.98),
-            loc='upper left',
-            borderaxespad=0.0,
-            markerscale = 6,
-            framealpha = 1,
-            frameon=True,
-            facecolor = "white", 
-            
-    )
+        title_top3 = f"Modalités top 3 de {variable_name}"
+        ax.legend(bbox_to_anchor=(0.02, 0.98), loc='upper left', borderaxespad=0.0, markerscale=6, title = title_top3,
+                  framealpha=1, frameon=True, facecolor="white", fontsize=14, title_fontsize=16)
 
     if on_cluster:
         cbar = fig.colorbar(sc, ax=ax, ticks=range(K))
-        cbar.set_label("Cluster of Games")
+        cbar.set_label("Cluster de jeux")
 
 
-    ax.set_title(f"UMAP Projection of {dataset_name} colored by K-Means, K = {K} and {variable_name} per cluster")
-    ax.set_xlabel("UMAP Dim1")
-    ax.set_ylabel("UMAP Dim2")
+    ax.set_title(f"Projection UMAP de {dataset_name} avec K-Means (K={K}) et moyenne/mode de {variable_name} par cluster")
+    ax.set_xlabel("Dimension UMAP 1")
+    ax.set_ylabel("Dimension UMAP 2")
 
     plt.rcParams['font.family'] = 'DejaVu Sans'
     plt.tight_layout()
