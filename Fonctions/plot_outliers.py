@@ -28,7 +28,11 @@ def plot_outliers(df, cols, ncols=3):
         axes[i].boxplot(serie, vert=True)
         axes[i].set_title(f"{col} \n{n_outliers} outliers ({pct_outliers:.1f}%)")
         axes[i].set_ylabel(col)
- 
+
+    # Masquer les axes inutilisés
+    for j in range(i + 1, len(axes)):
+        axes[j].set_visible(False)
+        
     plt.tight_layout()
     plt.show()
  

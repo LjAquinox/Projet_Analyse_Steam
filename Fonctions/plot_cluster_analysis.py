@@ -21,7 +21,7 @@ def make_labels(results):
 
         for dictionary in results:
 
-            labels_values.update({f"{dictionary["cluster"]}": dictionary[var]})
+            labels_values.update({f"{dictionary['cluster']}": dictionary[var]})
 
         var_labels.update({var: labels_values})
 
